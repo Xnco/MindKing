@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <name>题库</name>
+    <questionbank>
+        <topic Type="历史">
+            <question>三国时期谁的轻功最好？</question>
+            <A>张飞</A>
+            <B>刘备</B>
+            <C>曹操</C>
+            <D>吕布</D>
+            <real>C</real>
+        </topic>
+        <topic Type="数学">
+            <question>27的立方根是？</question>
+            <A>9</A>
+            <B>5</B>
+            <C>3</C>
+            <D>1</D>
+            <real>C</real>
+        </topic>
+        <topic Type="历史">
+            <question>苏洵和苏轼是什么关系？</question>
+            <A>父子</A>
+            <B>知己</B>
+            <C>兄弟</C>
+            <D>从属</D>
+            <real>A</real>
+        </topic>
+        <topic Type="小说">
+            <question>黄金时代三部曲作者是谁？</question>
+            <A>余华</A>
+            <B>余秋雨</B>
+            <C>王小波</C>
+            <D>谢霆锋</D>
+            <real>C</real>
+        </topic>
+        <topic Type="游戏">
+            <question>游戏《魔兽世界》中最矮的种族是？</question>
+            <A>矮人</A>
+            <B>暗夜精灵</B>
+            <C>地精</C>
+            <D>兽人</D>
+            <real>C</real>
+        </topic>
+    </questionbank>
+</root>

@@ -15,6 +15,6 @@ public class UIFind : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
 
-        SceneManager.LoadScene("LoadFinish");
+        SceneManager.LoadScene("FindEnd");
     }
 }

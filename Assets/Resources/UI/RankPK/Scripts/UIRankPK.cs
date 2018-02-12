@@ -11,10 +11,16 @@ public class UIRankPK : MonoBehaviour {
         {
             UIEventListener.Get(backBtn.gameObject).onClick += (go) => SceneManager.LoadScene("Start");
         }
+
+        for (int i = 0; i < 3; i++)
+        {
+            Transform tmpItem = transform.Find("List/Item" + i);
+            if (tmpItem != null)
+            {
+                UIEventListener.Get(tmpItem.gameObject).onClick += (go) => SceneManager.LoadScene("Find") ;
+            }
+        }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

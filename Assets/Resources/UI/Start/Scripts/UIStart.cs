@@ -7,6 +7,9 @@ public class UIStart : MonoBehaviour
 
     void Start()
     {
+        // 读取本地题库 -- 测试
+        LocalInfo.GetSinglon();
+
         Transform RankPK = transform.Find("Body/RankPK");
         if (RankPK != null)
         {

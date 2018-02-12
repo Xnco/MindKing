@@ -84,4 +84,26 @@ public static class UIHelper
         }
         tmp.color = value;
     }
+
+    // 设置激活状态
+    public static void SetActive(Transform parent, string path, bool active)
+    {
+        if (parent == null)
+        {
+            return;
+        }
+
+        Transform target = parent.Find(path);
+        SetActive(target, active);
+    }
+
+    public static void SetActive(Transform target, bool active)
+    {
+        if (target == null)
+        {
+            return;
+        }
+
+        target.gameObject.SetActive(active);
+    }
 }
