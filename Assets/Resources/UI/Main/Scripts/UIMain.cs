@@ -148,6 +148,13 @@ public class UIMain : MonoBehaviour
             timeSprite.fillAmount = time / 10f;
             yield return null;
         }
+
+        // 时间到 -> 所有牌不能点 玩家不得分
+        // 暂不考虑AI
+        mPlayerFinish = true;
+        AnswerEnable(false);
+
+        OneEnd(); // 回合结束
     }
 
     // 玩家答题
@@ -172,7 +179,6 @@ public class UIMain : MonoBehaviour
             // 正确 判断加多少分
             mPlayerScore += 240 * time / 10f;
             UIHelper.SetLabel(mBlueSlider, "Score", mPlayerScore.ToString("0"));
-            UIHelper.SetSlider(mBlueSlider, mPlayerScore / MaxScore);
 
             UIHelper.SetColor(go.transform, Color.green);
         }
@@ -182,6 +188,7 @@ public class UIMain : MonoBehaviour
             UIHelper.SetColor(go.transform, Color.red);
         }
 
+        UIHelper.SetSlider(mBlueSlider, mPlayerScore / MaxScore);
         // 判断游戏是否结束
         OneEnd();
     }
@@ -205,7 +212,6 @@ public class UIMain : MonoBehaviour
         {
             // 正确 判断加多少分
             mAIScore += 240 * time / 10f;
-            UIHelper.SetLabel(mRedSlider, "Score", mAIScore.ToString("0"));
             UIHelper.SetSlider(mRedSlider, mAIScore / MaxScore);
             UIHelper.SetColor(mAllAnswer[answer], Color.green);
         }
@@ -214,6 +220,8 @@ public class UIMain : MonoBehaviour
             // 错误不加分
             UIHelper.SetColor(mAllAnswer[answer], Color.red);
         }
+
+        UIHelper.SetLabel(mRedSlider, "Score", mAIScore.ToString("0"));
 
         // 判断游戏是否结束
         OneEnd();
