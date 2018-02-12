@@ -290,6 +290,28 @@
             <filename>../头脑王者-修订稿/切图/4/Main_Red_Cir2.png</filename>
             <filename>../头脑王者-修订稿/切图/4/Main_RedHalf.png</filename>
             <filename>../头脑王者-修订稿/切图/4/Main_BlueHalf.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/win the final.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/commbo_while.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/Crown.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/fenxiang.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/finish_bottom.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/finish_commbo.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/finish_dot.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/finish_effect.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/left-circle.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/people.png</filename>
+            <filename>../头脑王者-修订稿/切图/5/right-circle.png</filename>
+            <filename>../头脑王者-修订稿/切图/6/1 (18).png</filename>
+            <filename>../头脑王者-修订稿/切图/6/1 (2).png</filename>
+            <filename>../头脑王者-修订稿/切图/6/1 (3).png</filename>
+            <filename>../头脑王者-修订稿/切图/6/1 (16).png</filename>
+            <filename>../头脑王者-修订稿/切图/6/1 (17).png</filename>
+            <filename>../头脑王者-修订稿/切图/4/sanjiao-chuti.png</filename>
+            <filename>../头脑王者-修订稿/gengxin/FOURTH.png</filename>
+            <filename>../头脑王者-修订稿/gengxin/TWKLE.png</filename>
+            <filename>../头脑王者-修订稿/gengxin/BEI.png</filename>
+            <filename>../头脑王者-修订稿/gengxin/DOUBLE.png</filename>
+            <filename>../头脑王者-修订稿/gengxin/FIVE.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
