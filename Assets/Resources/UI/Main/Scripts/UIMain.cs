@@ -99,7 +99,7 @@ public class UIMain : MonoBehaviour
         mAIScore = 0;
 
         // 初始化题目 -- 5道题测试
-        int[] tmpIndex = new int[5] { 0,1,2,3,4};
+        int[] tmpIndex = new int[5] {0,1,2,3,4};
         curQuestions = LocalInfo.GetSinglon().GetQuestion(tmpIndex);
     }
 

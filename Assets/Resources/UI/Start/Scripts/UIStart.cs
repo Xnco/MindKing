@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.Xml;
+using System.IO;
 
 public class UIStart : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class UIStart : MonoBehaviour
     void Start()
     {
         // 读取本地题库 -- 测试
-        LocalInfo.GetSinglon();
+        StartCoroutine(LocalInfo.LoadXML());
 
         Transform RankPK = transform.Find("Body/RankPK");
         if (RankPK != null)

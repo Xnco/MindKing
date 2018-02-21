@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.IO;
+using System.Text;
 using System.Xml;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,20 +19,30 @@ public class LocalInfo
     }
 
 #if UNITY_EDITOR
-    string textPath = Application.dataPath + "/StreamingAssets/Topic/Topic.xml";
+    static string textPath = Application.dataPath + "/StreamingAssets/Topic/Topic.xml";
 #elif UNITY_ANDROID
-    string textPath = Application.dataPath;
+    static string textPath = Application.streamingAssetsPath + "/Topic/Topic.xml";
 #endif
 
-    List<Question> allQuestion;
+    static List<Question> allQuestion;
 
     private LocalInfo()
     {
-        allQuestion = new List<Question>();
+        
+    }
 
-        // 读取 XML
+    public static IEnumerator LoadXML()
+    {
+        allQuestion = new List<Question>();
+        yield return null;
         XmlDocument xmlDoc = new XmlDocument();
+
+#if UNITY_EDITOR
         xmlDoc.Load(textPath);
+#elif UNITY_ANDROID
+        WWW www = new WWW(textPath);
+		xmlDoc.LoadXml (www.text);
+#endif
         XmlNode root = xmlDoc.SelectSingleNode("root/questionbank");
         XmlNodeList list = root.SelectNodes("topic");
         foreach (XmlNode item in list)
@@ -41,7 +52,7 @@ public class LocalInfo
             q.A = item.SelectSingleNode("A").InnerText;
             q.B = item.SelectSingleNode("B").InnerText;
             q.C = item.SelectSingleNode("C").InnerText;
-            q.D= item.SelectSingleNode("D").InnerText;
+            q.D = item.SelectSingleNode("D").InnerText;
             q.real = item.SelectSingleNode("real").InnerText;
             allQuestion.Add(q);
         }
