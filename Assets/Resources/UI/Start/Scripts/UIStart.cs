@@ -29,10 +29,16 @@ public class UIStart : MonoBehaviour
         {
             UIEventListener.Get(Shop.gameObject).onClick += (go) => SceneManager.LoadScene("Shop");
         }
+
+        Transform back = transform.Find("Top/Back");
+        if (back != null)
+        {
+            UIEventListener.Get(back.gameObject).onClick += (go) => Application.Quit();
+        }
     }
 
     void OnClickRank(GameObject go)
     {
-
+        // 点击排行榜
     }
 }
