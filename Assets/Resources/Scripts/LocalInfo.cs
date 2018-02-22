@@ -34,35 +34,31 @@ public class LocalInfo
     public static IEnumerator LoadXML()
     {
         allQuestion = new List<Question>();
-        yield return null;
         XmlDocument xmlDoc = new XmlDocument();
 
-        try
-        {
 #if UNITY_EDITOR
-            xmlDoc.Load(textPath);
+        xmlDoc.Load(textPath);
+
 #elif UNITY_ANDROID
-        WWW www = new WWW(textPath);
-		xmlDoc.LoadXml (www.text);
+            WWW www = new WWW(textPath);
+            yield return www;
+		    xmlDoc.LoadXml (www.text);
 #endif
-            XmlNode root = xmlDoc.SelectSingleNode("root/questionbank");
-            XmlNodeList list = root.SelectNodes("topic");
-            foreach (XmlNode item in list)
-            {
-                Question q = new Question();
-                q.text = item.SelectSingleNode("question").InnerText;
-                q.A = item.SelectSingleNode("A").InnerText;
-                q.B = item.SelectSingleNode("B").InnerText;
-                q.C = item.SelectSingleNode("C").InnerText;
-                q.D = item.SelectSingleNode("D").InnerText;
-                q.real = item.SelectSingleNode("real").InnerText;
-                allQuestion.Add(q);
-            }
-        }
-        catch (System.Exception)
+        XmlNode root = xmlDoc.SelectSingleNode("root/questionbank");
+        XmlNodeList list = root.SelectNodes("topic");
+        foreach (XmlNode item in list)
         {
-            throw;
+            Question q = new Question();
+            q.text = item.SelectSingleNode("question").InnerText;
+            q.A = item.SelectSingleNode("A").InnerText;
+            q.B = item.SelectSingleNode("B").InnerText;
+            q.C = item.SelectSingleNode("C").InnerText;
+            q.D = item.SelectSingleNode("D").InnerText;
+            q.real = item.SelectSingleNode("real").InnerText;
+            allQuestion.Add(q);
         }
+
+        yield return null;
     }
 
     public List<Question> GetQuestion(int[] indexs)
