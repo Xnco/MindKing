@@ -166,6 +166,7 @@ public class UIMain : MonoBehaviour
         mAIFinish = false;
     }
 
+    // 计时
     IEnumerator Timing()
     {
         time = 9.9f;
@@ -179,9 +180,20 @@ public class UIMain : MonoBehaviour
         }
 
         // 时间到 -> 所有牌不能点 玩家不得分
-        // 暂不考虑AI
         mPlayerFinish = true;
+        mAIFinish = true;
         AnswerEnable(false);
+
+        if (mAISelect != null)
+        {
+            UIHelper.SetActive(mAISelect, "Right", true);
+            UIHelper.SetColor(mAISelect, Color.red);
+        }
+
+        if (mPlayerSelect != null)
+        {
+            UIHelper.SetActive(mPlayerSelect, "Left", true);
+        }
 
         OneEnd(); // 回合结束
     }
@@ -300,12 +312,16 @@ public class UIMain : MonoBehaviour
         if (mTimingCoroutine != null)
             StopCoroutine(mTimingCoroutine);
         StartCoroutine(TweenFinish());
+
+        mAISelect = null;
+        mPlayerSelect = null;
     }
 
+    // 结束动画 - 答案隐藏等
     IEnumerator TweenFinish()
     {
-        // 等一秒答案消失
-        yield return new WaitForSeconds(1);
+        // 等一会答案消失
+        yield return new WaitForSeconds(2);
         mBody.GetComponent<UIPlayTween>().tweenGroup = 1;
         mBody.GetComponent<UIPlayTween>().Play(false);
         mBody.GetComponent<UIPlayTween>().tweenGroup = 2;
@@ -332,5 +348,10 @@ public class UIMain : MonoBehaviour
         {
             mAllAnswer[i].GetComponent<BoxCollider>().enabled = enabled;
         }
+    }
+
+    private void OnDestroy()
+    {
+        manager.UnRegisterMsgHandler((int)PlayerEvent.AI_Reply, AIAnswer);
     }
 }
