@@ -195,6 +195,9 @@ public class UIMain : MonoBehaviour
             UIHelper.SetActive(mPlayerSelect, "Left", true);
         }
 
+        UIHelper.SetActive(mBlueSlider, "Score", true);
+        UIHelper.SetActive(mRedSlider, "Score", true);
+
         OneEnd(); // 回合结束
     }
 
