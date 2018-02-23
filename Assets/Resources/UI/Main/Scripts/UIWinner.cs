@@ -9,17 +9,14 @@ public class UIWinner : MonoBehaviour {
         Transform back = transform.Find("Body/Again");
         if (back != null)
         {
-            UIEventListener.Get(back.gameObject).onClick += (go) => SceneManager.LoadScene("RankPK");
+            UIEventListener.Get(back.gameObject).onClick +=
+                (go) =>
+                {
+                    SceneManager.LoadScene("RankPK");
+
+                    // 胜利 增加星星
+                    Player.GetSingle().pExp++;
+                };
         }
     }
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }

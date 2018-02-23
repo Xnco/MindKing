@@ -16,7 +16,7 @@ public class RedAI : MonoBehaviour
     void AI_BeginReply(BaseEvent varData)
     {
         // AI开始答题， n 秒后回答 n
-        float time = Random.Range(0f, 10f);
+        float time = Random.Range(0f, 9.5f);
 
         StartCoroutine(AI_Reply(time));
     }

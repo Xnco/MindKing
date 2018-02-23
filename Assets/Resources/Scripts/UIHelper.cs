@@ -106,4 +106,30 @@ public static class UIHelper
 
         target.gameObject.SetActive(active);
     }
+
+    // 设置激活状态
+    public static void SetSpriteName(Transform parent, string path, string name)
+    {
+        if (parent == null)
+        {
+            return;
+        }
+
+        Transform target = parent.Find(path);
+        SetSpriteName(target, name);
+    }
+
+    public static void SetSpriteName(Transform target, string name)
+    {
+        if (target == null)
+        {
+            return;
+        }
+
+        UISprite sp = target.GetComponent<UISprite>();
+        if (sp != null)
+        {
+            sp.spriteName = name;
+        }
+    }
 }
