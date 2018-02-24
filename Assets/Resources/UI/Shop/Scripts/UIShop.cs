@@ -58,15 +58,19 @@ public class UIShop : MonoBehaviour {
         {
             case "Top":
                 ApplicationSDK.PayMoney("Top", 2, "新手大礼包");
+                Player.GetSingle().pGold += 100;
                 break;
             case "Small":
                 ApplicationSDK.PayMoney("Small", 5, "少量王者币");
+                Player.GetSingle().pGold += 50;
                 break;
             case "Middle":
                 ApplicationSDK.PayMoney("Middle", 10, "中量王者币");
+                Player.GetSingle().pGold += 100;
                 break;
             case "Big":
                 ApplicationSDK.PayMoney("Big", 20, "大量王者币");
+                Player.GetSingle().pGold += 300;
                 break;
             default:
                 return;
