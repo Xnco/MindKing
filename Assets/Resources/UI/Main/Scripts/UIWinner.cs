@@ -22,7 +22,6 @@ public class UIWinner : MonoBehaviour {
                     {
                         // 失败 隐藏皇冠
                         UIHelper.SetActive(mCrown, false);
-                        Player.GetSingle().pExp--;
                     }
 
 =======
