@@ -7,8 +7,6 @@ public class UIStart : MonoBehaviour
 
     void Start()
     {
-        ApplicationSDK.SendLogStepToService(100, "开始游戏", true);
-
         Transform RankPK = transform.Find("Body/RankPK");
         if (RankPK != null)
         {

@@ -341,11 +341,7 @@ public class UIMain : MonoBehaviour
         {
             // 判断得分 -> 胜利或失败
             Debug.LogError("GameOver");
-
-            ExData<bool> tmpData = new ExData<bool>();
-            tmpData.pEventID = (int)PlayerEvent.GameOver;
-            tmpData.data = mPlayerScore >= mAIScore ? true : false;
-            manager.NotifyEvent(tmpData.pEventID, tmpData);
+            transform.Find("UIFinish").GetComponent<TweenScale>().PlayForward();
         }
     }
 
