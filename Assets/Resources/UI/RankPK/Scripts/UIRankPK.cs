@@ -10,6 +10,8 @@ public class UIRankPK : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        ApplicationSDK.SendLogStepToService(101, "进入PK列表", true);
+
         mPlayer = Player.GetSingle();
 
         UIHelper.SetLabel(transform.Find("Title/Gold"), mPlayer.pGold.ToString());

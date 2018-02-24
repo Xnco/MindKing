@@ -86,10 +86,10 @@ public class ApplicationSDK : MonoBehaviour
         //GetServiceGameData("20,20,20,20,20-1,1,1,1,1-20,20,20,20,20-1-pq10-1-30");
         GetServiceGameData(
             "{\"PayC\":[{\"AppName\":\"startpay\",\"SdkIDArr\":\"5\",\"Money\":20,\"Color\":1,\"FontSize\":18}," +
-            "{\"AppName\":\"xinshou\",\"SdkIDArr\":\"5\",\"Money\":2,\"Color\":1,\"FontSize\":18}," +
-            "{\"AppName\":\"xiao\",\"SdkIDArr\":\"5\",\"Money\":5,\"Color\":1,\"FontSize\":18}," +
-            "{\"AppName\":\"zhong\",\"SdkIDArr\":\"5\",\"Money\":10,\"Color\":1,\"FontSize\":18}," +
-            "{\"AppName\":\"da\",\"SdkIDArr\":\"5\",\"Money\":20,\"Color\":1,\"FontSize\":18}," +
+            "{\"AppName\":\"Top\",\"SdkIDArr\":\"5\",\"Money\":2,\"Color\":1,\"FontSize\":18}," +
+            "{\"AppName\":\"Small\",\"SdkIDArr\":\"5\",\"Money\":5,\"Color\":1,\"FontSize\":18}," +
+            "{\"AppName\":\"Middle\",\"SdkIDArr\":\"5\",\"Money\":10,\"Color\":1,\"FontSize\":18}," +
+            "{\"AppName\":\"Big\",\"SdkIDArr\":\"5\",\"Money\":20,\"Color\":1,\"FontSize\":18}," +
             "\"TwoPop\":0,\"PubChannel\":\"pq10\",\"FullPay\":20,\"StartPay\":20,\"PayTotalNum\":4,\"FullPayTime\":5}");
 #endif
     }

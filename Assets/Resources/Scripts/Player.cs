@@ -71,6 +71,12 @@ public class Player
             {
                 mExp = 0;
                 pLevel++;
+                ApplicationSDK.SendLogStepToService(104, string.Format("解锁{0}关", pLevel), true);
+            }
+
+            if (mExp < 0)
+            {
+                mExp = 0;
             }
 
             PlayerPrefs.SetInt("Exp", mExp);
